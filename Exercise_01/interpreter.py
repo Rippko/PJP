@@ -28,6 +28,7 @@ def convert_to_postfix(infix):
                 output.append(operators.pop())
             operators.append(char)
 
+
     while operators:
         output.append(operators.pop())
 
