@@ -12,22 +12,31 @@ def convert_to_postfix(infix):
     output = []
     operators = []
 
-    for char in infix:
-        if char.isdigit():
-            output.append(char)
-        elif char == '(':
-            operators.append(char)
-        elif char == ')':
+    i = 0
+    while i < len(infix):
+        if infix[i].isdigit():
+            num = ''
+            while i < len(infix) and infix[i].isdigit():
+                num += infix[i]
+                i += 1
+            output.append(num)
+        elif infix[i] == '(':
+            operators.append(infix[i])
+            i += 1
+        elif infix[i] == ')':
             while operators and operators[-1] != '(':
                 output.append(operators.pop())
             operators.pop()
-        elif is_operator(char):
-            if operators and char == operators[-1] and get_precedence(char) != 0:
+            i += 1
+        elif is_operator(infix[i]):
+            if operators and infix[i] == operators[-1] and get_precedence(infix[i]) != 0:
                 raise ValueError
-            while operators and get_precedence(operators[-1]) >= get_precedence(char):
+            while operators and get_precedence(operators[-1]) >= get_precedence(infix[i]):
                 output.append(operators.pop())
-            operators.append(char)
-
+            operators.append(infix[i])
+            i += 1
+        else:
+            i += 1
 
     while operators:
         output.append(operators.pop())
@@ -36,9 +45,7 @@ def convert_to_postfix(infix):
 
 def evaluate_postfix(postfix):
     stack = []
-    print("Evaluating postfix:", postfix)
     for token in postfix:
-        print("Processing token:", token)
         if token.isdigit():
             stack.append(int(token))
         elif is_operator(token):
