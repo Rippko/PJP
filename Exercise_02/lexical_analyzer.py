@@ -1,5 +1,6 @@
 from token import Token
 import re
+import sys
 
 
 def tokenize(input_text):
@@ -43,16 +44,25 @@ def tokenize(input_text):
 
     return tokens
 
-print("Enter the input:")
-input_text = ""
-while True:
-    line = input()
-    if not line:
-        break
-    input_text += line + "\n"
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <file_path>")
+        return
 
-tokens = tokenize(input_text)
+    file_path = sys.argv[1]
+    
+    try:
+        with open(file_path, 'r') as file:
+            input_text = file.read()
+    except FileNotFoundError:
+        print(f"File '{file_path}' not found.")
+        return
 
-print("\nTokens:")
-for token in tokens:
-    print(token)
+    tokens = tokenize(input_text)
+
+    print("Tokens:")
+    for token in tokens:
+        print(token)
+
+if __name__ == "__main__":
+    main()
