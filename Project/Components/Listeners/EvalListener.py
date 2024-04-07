@@ -4,9 +4,21 @@ from AntlrComponents.ProjectGrammarListener import ProjectGrammarListener as Gra
 class EvalListener(GrammarListener):
     def __init__(self):
         self.values = {}
-    
+        
+    def exitDeclar(self, ctx: GrammarParser.DeclarContext):
+        var_type = ctx.primitiveType().getText()
+        for var in ctx.ID():
+            if var_type == 'int':
+                self.values[var] = 0
+            elif var_type == 'float':
+                self.values[var] = 0.0
+            elif var_type == 'bool':
+                self.values[var] = False
+            elif var_type == 'string':
+                self.values[var] = ''
+
     def exitInt(self, ctx: GrammarParser.IntContext):
-        self.values[ctx] = int(ctx.INT().getText(), 10)
+        self.values[ctx] = int(ctx.INT().getText())
     
     def exitFloat(self, ctx: GrammarParser.FloatContext):
         self.values[ctx] = float(ctx.FLOAT().getText())
@@ -35,9 +47,3 @@ class EvalListener(GrammarListener):
             self.values[ctx] = left * right
         else:
             self.values[ctx] = left // right
-            
-    def exitProg(self, ctx: GrammarParser.ProgramContext):
-        for expr in ctx.expr():
-            print(self.values[expr])
-        
-    
