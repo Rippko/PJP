@@ -35,7 +35,7 @@ declar:
     primitiveType ID (',' ID)*
     ;
 
-writeExpr: 'write' STRING (',' expr)*
+writeExpr: 'write' expr (',' expr)*
     ;
 
 readExpr: 'read' ID (',' ID)*

@@ -49,7 +49,7 @@ def serializedATN():
         0,0,0,94,95,1,0,0,0,95,5,1,0,0,0,96,94,1,0,0,0,97,98,3,18,9,0,98,
         103,5,36,0,0,99,100,5,17,0,0,100,102,5,36,0,0,101,99,1,0,0,0,102,
         105,1,0,0,0,103,101,1,0,0,0,103,104,1,0,0,0,104,7,1,0,0,0,105,103,
-        1,0,0,0,106,107,5,5,0,0,107,112,5,35,0,0,108,109,5,17,0,0,109,111,
+        1,0,0,0,106,107,5,5,0,0,107,112,3,4,2,0,108,109,5,17,0,0,109,111,
         3,4,2,0,110,108,1,0,0,0,111,114,1,0,0,0,112,110,1,0,0,0,112,113,
         1,0,0,0,113,9,1,0,0,0,114,112,1,0,0,0,115,116,5,6,0,0,116,121,5,
         36,0,0,117,118,5,17,0,0,118,120,5,36,0,0,119,117,1,0,0,0,120,123,
@@ -988,21 +988,18 @@ class ProjectGrammarParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def STRING(self):
-            return self.getToken(ProjectGrammarParser.STRING, 0)
-
-        def COMMA(self, i:int=None):
-            if i is None:
-                return self.getTokens(ProjectGrammarParser.COMMA)
-            else:
-                return self.getToken(ProjectGrammarParser.COMMA, i)
-
         def expr(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ProjectGrammarParser.ExprContext)
             else:
                 return self.getTypedRuleContext(ProjectGrammarParser.ExprContext,i)
 
+
+        def COMMA(self, i:int=None):
+            if i is None:
+                return self.getTokens(ProjectGrammarParser.COMMA)
+            else:
+                return self.getToken(ProjectGrammarParser.COMMA, i)
 
         def getRuleIndex(self):
             return ProjectGrammarParser.RULE_writeExpr
@@ -1028,7 +1025,7 @@ class ProjectGrammarParser ( Parser ):
             self.state = 106
             self.match(ProjectGrammarParser.T__4)
             self.state = 107
-            self.match(ProjectGrammarParser.STRING)
+            self.expr(0)
             self.state = 112
             self._errHandler.sync(self)
             _la = self._input.LA(1)
