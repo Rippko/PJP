@@ -16,13 +16,21 @@ def main(argv):
     lexer = GrammarLexer(input)
     stream = CommonTokenStream(lexer)
     parser = GrammarParser(stream)
+    parser.removeErrorListeners()
     parser.addErrorListener(CustomErrorListener())
     prog = parser.program()
     
-    if parser.getNumberOfSyntaxErrors() == 0:
-        walker = ParseTreeWalker()
-        walker.walk(EvalListener(), prog)
-        print("Syntax is correct")
-
+    if parser.getNumberOfSyntaxErrors() != 0:
+        exit(0)
+        
+    walker = ParseTreeWalker()
+    listener = EvalListener()
+    walker.walk(listener, prog)
+    
+    if listener.has_error:
+        exit(0)
+        
+    print('No errors found')
+    
 if __name__ == '__main__':
     main(sys.argv)

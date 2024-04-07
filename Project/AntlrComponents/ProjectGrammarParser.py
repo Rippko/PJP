@@ -14,7 +14,7 @@ def serializedATN():
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,1,0,4,0,
         28,8,0,11,0,12,0,29,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,50,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,
-        2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,70,8,2,1,2,1,2,
+        2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,67,8,2,1,2,1,2,1,2,1,2,1,2,
         1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,
         1,2,1,2,1,2,5,2,93,8,2,10,2,12,2,96,9,2,1,3,1,3,1,3,1,3,5,3,102,
         8,3,10,3,12,3,105,9,3,1,4,1,4,1,4,1,4,5,4,111,8,4,10,4,12,4,114,
@@ -22,49 +22,49 @@ def serializedATN():
         6,1,6,1,6,1,6,3,6,132,8,6,1,7,1,7,1,7,1,7,1,7,1,7,1,8,1,8,4,8,142,
         8,8,11,8,12,8,143,1,8,1,8,1,9,1,9,1,9,1,9,3,9,152,8,9,1,10,1,10,
         1,11,1,11,1,12,1,12,1,12,0,1,4,13,0,2,4,6,8,10,12,14,16,18,20,22,
-        24,0,5,1,0,18,19,1,0,20,21,1,0,28,31,1,0,26,27,1,0,23,24,176,0,27,
-        1,0,0,0,2,49,1,0,0,0,4,69,1,0,0,0,6,97,1,0,0,0,8,106,1,0,0,0,10,
-        115,1,0,0,0,12,124,1,0,0,0,14,133,1,0,0,0,16,139,1,0,0,0,18,151,
-        1,0,0,0,20,153,1,0,0,0,22,155,1,0,0,0,24,157,1,0,0,0,26,28,3,2,1,
-        0,27,26,1,0,0,0,28,29,1,0,0,0,29,27,1,0,0,0,29,30,1,0,0,0,30,31,
-        1,0,0,0,31,32,5,0,0,1,32,1,1,0,0,0,33,34,3,6,3,0,34,35,5,16,0,0,
-        35,50,1,0,0,0,36,37,3,8,4,0,37,38,5,16,0,0,38,50,1,0,0,0,39,40,3,
-        10,5,0,40,41,5,16,0,0,41,50,1,0,0,0,42,43,3,4,2,0,43,44,5,16,0,0,
-        44,50,1,0,0,0,45,50,3,12,6,0,46,50,3,14,7,0,47,50,3,16,8,0,48,50,
-        5,16,0,0,49,33,1,0,0,0,49,36,1,0,0,0,49,39,1,0,0,0,49,42,1,0,0,0,
-        49,45,1,0,0,0,49,46,1,0,0,0,49,47,1,0,0,0,49,48,1,0,0,0,50,3,1,0,
-        0,0,51,52,6,2,-1,0,52,53,5,25,0,0,53,70,3,4,2,10,54,55,5,36,0,0,
-        55,56,5,1,0,0,56,70,5,36,0,0,57,70,5,34,0,0,58,70,5,33,0,0,59,70,
-        5,35,0,0,60,70,5,36,0,0,61,70,5,32,0,0,62,63,5,2,0,0,63,64,3,4,2,
-        0,64,65,5,3,0,0,65,70,1,0,0,0,66,67,5,32,0,0,67,68,5,4,0,0,68,70,
-        3,4,2,1,69,51,1,0,0,0,69,54,1,0,0,0,69,57,1,0,0,0,69,58,1,0,0,0,
-        69,59,1,0,0,0,69,60,1,0,0,0,69,61,1,0,0,0,69,62,1,0,0,0,69,66,1,
-        0,0,0,70,94,1,0,0,0,71,72,10,15,0,0,72,73,7,0,0,0,73,93,3,4,2,16,
-        74,75,10,14,0,0,75,76,7,1,0,0,76,93,3,4,2,15,77,78,10,13,0,0,78,
-        79,5,22,0,0,79,93,3,4,2,14,80,81,10,12,0,0,81,82,3,20,10,0,82,83,
-        3,4,2,13,83,93,1,0,0,0,84,85,10,11,0,0,85,86,3,22,11,0,86,87,3,4,
-        2,12,87,93,1,0,0,0,88,89,10,9,0,0,89,90,3,24,12,0,90,91,3,4,2,10,
-        91,93,1,0,0,0,92,71,1,0,0,0,92,74,1,0,0,0,92,77,1,0,0,0,92,80,1,
-        0,0,0,92,84,1,0,0,0,92,88,1,0,0,0,93,96,1,0,0,0,94,92,1,0,0,0,94,
-        95,1,0,0,0,95,5,1,0,0,0,96,94,1,0,0,0,97,98,3,18,9,0,98,103,5,32,
-        0,0,99,100,5,17,0,0,100,102,5,32,0,0,101,99,1,0,0,0,102,105,1,0,
-        0,0,103,101,1,0,0,0,103,104,1,0,0,0,104,7,1,0,0,0,105,103,1,0,0,
-        0,106,107,5,5,0,0,107,112,5,36,0,0,108,109,5,17,0,0,109,111,3,4,
-        2,0,110,108,1,0,0,0,111,114,1,0,0,0,112,110,1,0,0,0,112,113,1,0,
-        0,0,113,9,1,0,0,0,114,112,1,0,0,0,115,116,5,6,0,0,116,121,5,32,0,
-        0,117,118,5,17,0,0,118,120,5,32,0,0,119,117,1,0,0,0,120,123,1,0,
-        0,0,121,119,1,0,0,0,121,122,1,0,0,0,122,11,1,0,0,0,123,121,1,0,0,
-        0,124,125,5,7,0,0,125,126,5,2,0,0,126,127,3,4,2,0,127,128,5,3,0,
-        0,128,131,3,2,1,0,129,130,5,8,0,0,130,132,3,2,1,0,131,129,1,0,0,
-        0,131,132,1,0,0,0,132,13,1,0,0,0,133,134,5,9,0,0,134,135,5,2,0,0,
-        135,136,3,4,2,0,136,137,5,3,0,0,137,138,3,2,1,0,138,15,1,0,0,0,139,
-        141,5,10,0,0,140,142,3,2,1,0,141,140,1,0,0,0,142,143,1,0,0,0,143,
-        141,1,0,0,0,143,144,1,0,0,0,144,145,1,0,0,0,145,146,5,11,0,0,146,
-        17,1,0,0,0,147,152,5,12,0,0,148,152,5,13,0,0,149,152,5,14,0,0,150,
-        152,5,15,0,0,151,147,1,0,0,0,151,148,1,0,0,0,151,149,1,0,0,0,151,
-        150,1,0,0,0,152,19,1,0,0,0,153,154,7,2,0,0,154,21,1,0,0,0,155,156,
-        7,3,0,0,156,23,1,0,0,0,157,158,7,4,0,0,158,25,1,0,0,0,11,29,49,69,
-        92,94,103,112,121,131,143,151
+        24,0,6,1,0,22,23,1,0,18,19,2,0,20,20,23,23,1,0,28,31,1,0,26,27,1,
+        0,24,25,176,0,27,1,0,0,0,2,49,1,0,0,0,4,66,1,0,0,0,6,97,1,0,0,0,
+        8,106,1,0,0,0,10,115,1,0,0,0,12,124,1,0,0,0,14,133,1,0,0,0,16,139,
+        1,0,0,0,18,151,1,0,0,0,20,153,1,0,0,0,22,155,1,0,0,0,24,157,1,0,
+        0,0,26,28,3,2,1,0,27,26,1,0,0,0,28,29,1,0,0,0,29,27,1,0,0,0,29,30,
+        1,0,0,0,30,31,1,0,0,0,31,32,5,0,0,1,32,1,1,0,0,0,33,34,3,6,3,0,34,
+        35,5,16,0,0,35,50,1,0,0,0,36,37,3,8,4,0,37,38,5,16,0,0,38,50,1,0,
+        0,0,39,40,3,10,5,0,40,41,5,16,0,0,41,50,1,0,0,0,42,43,3,4,2,0,43,
+        44,5,16,0,0,44,50,1,0,0,0,45,50,3,12,6,0,46,50,3,14,7,0,47,50,3,
+        16,8,0,48,50,5,16,0,0,49,33,1,0,0,0,49,36,1,0,0,0,49,39,1,0,0,0,
+        49,42,1,0,0,0,49,45,1,0,0,0,49,46,1,0,0,0,49,47,1,0,0,0,49,48,1,
+        0,0,0,50,3,1,0,0,0,51,52,6,2,-1,0,52,53,7,0,0,0,53,67,3,4,2,10,54,
+        67,5,33,0,0,55,67,5,32,0,0,56,67,5,34,0,0,57,67,5,35,0,0,58,67,5,
+        36,0,0,59,60,5,2,0,0,60,61,3,4,2,0,61,62,5,3,0,0,62,67,1,0,0,0,63,
+        64,5,36,0,0,64,65,5,4,0,0,65,67,3,4,2,1,66,51,1,0,0,0,66,54,1,0,
+        0,0,66,55,1,0,0,0,66,56,1,0,0,0,66,57,1,0,0,0,66,58,1,0,0,0,66,59,
+        1,0,0,0,66,63,1,0,0,0,67,94,1,0,0,0,68,69,10,15,0,0,69,70,7,1,0,
+        0,70,93,3,4,2,16,71,72,10,14,0,0,72,73,7,2,0,0,73,93,3,4,2,15,74,
+        75,10,13,0,0,75,76,5,21,0,0,76,93,3,4,2,14,77,78,10,12,0,0,78,79,
+        3,20,10,0,79,80,3,4,2,13,80,93,1,0,0,0,81,82,10,11,0,0,82,83,3,22,
+        11,0,83,84,3,4,2,12,84,93,1,0,0,0,85,86,10,9,0,0,86,87,3,24,12,0,
+        87,88,3,4,2,10,88,93,1,0,0,0,89,90,10,8,0,0,90,91,5,1,0,0,91,93,
+        3,4,2,9,92,68,1,0,0,0,92,71,1,0,0,0,92,74,1,0,0,0,92,77,1,0,0,0,
+        92,81,1,0,0,0,92,85,1,0,0,0,92,89,1,0,0,0,93,96,1,0,0,0,94,92,1,
+        0,0,0,94,95,1,0,0,0,95,5,1,0,0,0,96,94,1,0,0,0,97,98,3,18,9,0,98,
+        103,5,36,0,0,99,100,5,17,0,0,100,102,5,36,0,0,101,99,1,0,0,0,102,
+        105,1,0,0,0,103,101,1,0,0,0,103,104,1,0,0,0,104,7,1,0,0,0,105,103,
+        1,0,0,0,106,107,5,5,0,0,107,112,5,35,0,0,108,109,5,17,0,0,109,111,
+        3,4,2,0,110,108,1,0,0,0,111,114,1,0,0,0,112,110,1,0,0,0,112,113,
+        1,0,0,0,113,9,1,0,0,0,114,112,1,0,0,0,115,116,5,6,0,0,116,121,5,
+        36,0,0,117,118,5,17,0,0,118,120,5,36,0,0,119,117,1,0,0,0,120,123,
+        1,0,0,0,121,119,1,0,0,0,121,122,1,0,0,0,122,11,1,0,0,0,123,121,1,
+        0,0,0,124,125,5,7,0,0,125,126,5,2,0,0,126,127,3,4,2,0,127,128,5,
+        3,0,0,128,131,3,2,1,0,129,130,5,8,0,0,130,132,3,2,1,0,131,129,1,
+        0,0,0,131,132,1,0,0,0,132,13,1,0,0,0,133,134,5,9,0,0,134,135,5,2,
+        0,0,135,136,3,4,2,0,136,137,5,3,0,0,137,138,3,2,1,0,138,15,1,0,0,
+        0,139,141,5,10,0,0,140,142,3,2,1,0,141,140,1,0,0,0,142,143,1,0,0,
+        0,143,141,1,0,0,0,143,144,1,0,0,0,144,145,1,0,0,0,145,146,5,11,0,
+        0,146,17,1,0,0,0,147,152,5,12,0,0,148,152,5,13,0,0,149,152,5,14,
+        0,0,150,152,5,15,0,0,151,147,1,0,0,0,151,148,1,0,0,0,151,149,1,0,
+        0,0,151,150,1,0,0,0,152,19,1,0,0,0,153,154,7,3,0,0,154,21,1,0,0,
+        0,155,156,7,4,0,0,156,23,1,0,0,0,157,158,7,5,0,0,158,25,1,0,0,0,
+        11,29,49,66,92,94,103,112,121,131,143,151
     ]
 
 class ProjectGrammarParser ( Parser ):
@@ -80,17 +80,17 @@ class ProjectGrammarParser ( Parser ):
     literalNames = [ "<INVALID>", "'.'", "'('", "')'", "'='", "'write'", 
                      "'read'", "'if'", "'else'", "'while'", "'{'", "'}'", 
                      "'int'", "'float'", "'bool'", "'string'", "';'", "','", 
-                     "'*'", "'/'", "'+'", "'-'", "'%'", "'&&'", "'||'", 
-                     "'!'", "'=='", "'!='", "'<'", "'<='", "'>'", "'>='" ]
+                     "'*'", "'/'", "'+'", "'%'", "'!'", "'-'", "'&&'", "'||'", 
+                     "'=='", "'!='", "'<'", "'<='", "'>'", "'>='" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "INT_TYPE", "FLOAT_TYPE", "BOOL_TYPE", "STRING_TYPE", 
-                      "SEMI", "COMMA", "MUL", "DIV", "ADD", "SUB", "MOD", 
-                      "AND", "OR", "NOT", "EQUALS", "NOT_EQUALS", "LESS_THAN", 
+                      "SEMI", "COMMA", "MUL", "DIV", "ADD", "MOD", "NOT", 
+                      "SUB", "AND", "OR", "EQUALS", "NOT_EQUALS", "LESS_THAN", 
                       "LESS_THAN_OR_EQUAL", "GREATER_THAN", "GREATER_THAN_OR_EQUAL", 
-                      "ID", "FLOAT", "INT", "BOOL", "STRING", "COMMENT", 
+                      "FLOAT", "INT", "BOOL", "STRING", "ID", "COMMENT", 
                       "WS" ]
 
     RULE_program = 0
@@ -132,22 +132,22 @@ class ProjectGrammarParser ( Parser ):
     MUL=18
     DIV=19
     ADD=20
-    SUB=21
-    MOD=22
-    AND=23
-    OR=24
-    NOT=25
+    MOD=21
+    NOT=22
+    SUB=23
+    AND=24
+    OR=25
     EQUALS=26
     NOT_EQUALS=27
     LESS_THAN=28
     LESS_THAN_OR_EQUAL=29
     GREATER_THAN=30
     GREATER_THAN_OR_EQUAL=31
-    ID=32
-    FLOAT=33
-    INT=34
-    BOOL=35
-    STRING=36
+    FLOAT=32
+    INT=33
+    BOOL=34
+    STRING=35
+    ID=36
     COMMENT=37
     WS=38
 
@@ -207,7 +207,7 @@ class ProjectGrammarParser ( Parser ):
                 self.state = 29 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 133177669348) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 133156697828) != 0)):
                     break
 
             self.state = 31
@@ -302,7 +302,7 @@ class ProjectGrammarParser ( Parser ):
                 self.state = 40
                 self.match(ProjectGrammarParser.SEMI)
                 pass
-            elif token in [2, 25, 32, 33, 34, 35, 36]:
+            elif token in [2, 22, 23, 32, 33, 34, 35, 36]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 42
                 self.expr(0)
@@ -528,17 +528,42 @@ class ProjectGrammarParser ( Parser ):
                 listener.exitAddSub(self)
 
 
+    class UnaryContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a ProjectGrammarParser.ExprContext
+            super().__init__(parser)
+            self.op = None # Token
+            self.copyFrom(ctx)
+
+        def expr(self):
+            return self.getTypedRuleContext(ProjectGrammarParser.ExprContext,0)
+
+        def SUB(self):
+            return self.getToken(ProjectGrammarParser.SUB, 0)
+        def NOT(self):
+            return self.getToken(ProjectGrammarParser.NOT, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnary" ):
+                listener.enterUnary(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnary" ):
+                listener.exitUnary(self)
+
+
     class ConcatContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a ProjectGrammarParser.ExprContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def STRING(self, i:int=None):
+        def expr(self, i:int=None):
             if i is None:
-                return self.getTokens(ProjectGrammarParser.STRING)
+                return self.getTypedRuleContexts(ProjectGrammarParser.ExprContext)
             else:
-                return self.getToken(ProjectGrammarParser.STRING, i)
+                return self.getTypedRuleContext(ProjectGrammarParser.ExprContext,i)
+
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConcat" ):
@@ -637,27 +662,6 @@ class ProjectGrammarParser ( Parser ):
                 listener.exitLogical(self)
 
 
-    class NotContext(ExprContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a ProjectGrammarParser.ExprContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def NOT(self):
-            return self.getToken(ProjectGrammarParser.NOT, 0)
-        def expr(self):
-            return self.getTypedRuleContext(ProjectGrammarParser.ExprContext,0)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNot" ):
-                listener.enterNot(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNot" ):
-                listener.exitNot(self)
-
-
     class RelationalContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a ProjectGrammarParser.ExprContext
@@ -694,93 +698,87 @@ class ProjectGrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 69
+            self.state = 66
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
-                localctx = ProjectGrammarParser.NotContext(self, localctx)
+                localctx = ProjectGrammarParser.UnaryContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
 
                 self.state = 52
-                self.match(ProjectGrammarParser.NOT)
+                localctx.op = self._input.LT(1)
+                _la = self._input.LA(1)
+                if not(_la==22 or _la==23):
+                    localctx.op = self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
                 self.state = 53
                 self.expr(10)
                 pass
 
             elif la_ == 2:
-                localctx = ProjectGrammarParser.ConcatContext(self, localctx)
-                self._ctx = localctx
-                _prevctx = localctx
-                self.state = 54
-                self.match(ProjectGrammarParser.STRING)
-                self.state = 55
-                self.match(ProjectGrammarParser.T__0)
-                self.state = 56
-                self.match(ProjectGrammarParser.STRING)
-                pass
-
-            elif la_ == 3:
                 localctx = ProjectGrammarParser.IntContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 57
+                self.state = 54
                 self.match(ProjectGrammarParser.INT)
                 pass
 
-            elif la_ == 4:
+            elif la_ == 3:
                 localctx = ProjectGrammarParser.FloatContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 58
+                self.state = 55
                 self.match(ProjectGrammarParser.FLOAT)
                 pass
 
-            elif la_ == 5:
+            elif la_ == 4:
                 localctx = ProjectGrammarParser.BoolContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 59
+                self.state = 56
                 self.match(ProjectGrammarParser.BOOL)
                 pass
 
-            elif la_ == 6:
+            elif la_ == 5:
                 localctx = ProjectGrammarParser.StringContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 60
+                self.state = 57
                 self.match(ProjectGrammarParser.STRING)
                 pass
 
-            elif la_ == 7:
+            elif la_ == 6:
                 localctx = ProjectGrammarParser.IdentifierContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 61
+                self.state = 58
                 self.match(ProjectGrammarParser.ID)
                 pass
 
-            elif la_ == 8:
+            elif la_ == 7:
                 localctx = ProjectGrammarParser.ParensContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 62
+                self.state = 59
                 self.match(ProjectGrammarParser.T__1)
-                self.state = 63
+                self.state = 60
                 self.expr(0)
-                self.state = 64
+                self.state = 61
                 self.match(ProjectGrammarParser.T__2)
                 pass
 
-            elif la_ == 9:
+            elif la_ == 8:
                 localctx = ProjectGrammarParser.AssignmentContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 66
+                self.state = 63
                 self.match(ProjectGrammarParser.ID)
-                self.state = 67
+                self.state = 64
                 self.match(ProjectGrammarParser.T__3)
-                self.state = 68
+                self.state = 65
                 self.expr(1)
                 pass
 
@@ -800,11 +798,11 @@ class ProjectGrammarParser ( Parser ):
                     if la_ == 1:
                         localctx = ProjectGrammarParser.MulDivContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 71
+                        self.state = 68
                         if not self.precpred(self._ctx, 15):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 15)")
-                        self.state = 72
+                        self.state = 69
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==18 or _la==19):
@@ -812,79 +810,92 @@ class ProjectGrammarParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 73
+                        self.state = 70
                         self.expr(16)
                         pass
 
                     elif la_ == 2:
                         localctx = ProjectGrammarParser.AddSubContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 74
+                        self.state = 71
                         if not self.precpred(self._ctx, 14):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 14)")
-                        self.state = 75
+                        self.state = 72
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==20 or _la==21):
+                        if not(_la==20 or _la==23):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 76
+                        self.state = 73
                         self.expr(15)
                         pass
 
                     elif la_ == 3:
                         localctx = ProjectGrammarParser.ModContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 77
+                        self.state = 74
                         if not self.precpred(self._ctx, 13):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 13)")
-                        self.state = 78
+                        self.state = 75
                         localctx.op = self.match(ProjectGrammarParser.MOD)
-                        self.state = 79
+                        self.state = 76
                         self.expr(14)
                         pass
 
                     elif la_ == 4:
                         localctx = ProjectGrammarParser.RelationalContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 80
+                        self.state = 77
                         if not self.precpred(self._ctx, 12):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
-                        self.state = 81
+                        self.state = 78
                         self.relationalOp()
-                        self.state = 82
+                        self.state = 79
                         self.expr(13)
                         pass
 
                     elif la_ == 5:
                         localctx = ProjectGrammarParser.ComparisonContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 84
+                        self.state = 81
                         if not self.precpred(self._ctx, 11):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
-                        self.state = 85
+                        self.state = 82
                         self.comparisonOp()
-                        self.state = 86
+                        self.state = 83
                         self.expr(12)
                         pass
 
                     elif la_ == 6:
                         localctx = ProjectGrammarParser.LogicalContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 88
+                        self.state = 85
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
-                        self.state = 89
+                        self.state = 86
                         self.logicalOp()
-                        self.state = 90
+                        self.state = 87
                         self.expr(10)
+                        pass
+
+                    elif la_ == 7:
+                        localctx = ProjectGrammarParser.ConcatContext(self, ProjectGrammarParser.ExprContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 89
+                        if not self.precpred(self._ctx, 8):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
+                        self.state = 90
+                        self.match(ProjectGrammarParser.T__0)
+                        self.state = 91
+                        self.expr(9)
                         pass
 
              
@@ -1271,7 +1282,7 @@ class ProjectGrammarParser ( Parser ):
                 self.state = 143 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 133177669348) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 133156697828) != 0)):
                     break
 
             self.state = 145
@@ -1501,7 +1512,7 @@ class ProjectGrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 157
             _la = self._input.LA(1)
-            if not(_la==23 or _la==24):
+            if not(_la==24 or _la==25):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1549,6 +1560,10 @@ class ProjectGrammarParser ( Parser ):
 
             if predIndex == 5:
                 return self.precpred(self._ctx, 9)
+         
+
+            if predIndex == 6:
+                return self.precpred(self._ctx, 8)
          
 
 

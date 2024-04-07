@@ -19,9 +19,9 @@ expr: expr op=(MUL|DIV) expr                # mulDiv
     | expr op=MOD expr                      # mod
     | expr relationalOp expr                # relational
     | expr comparisonOp expr                # comparison
-    | NOT expr                              # not
+    | op=(SUB|NOT) expr                     # unary
     | expr logicalOp expr                   # logical
-    | STRING '.' STRING                     # concat
+    | expr '.' expr                         # concat
     | INT                                   # int
     | FLOAT                                 # float
     | BOOL                                  # bool
@@ -87,12 +87,14 @@ COMMA: ',';
 MUL : '*' ; 
 DIV : '/' ;
 ADD : '+' ;
-SUB : '-' ;
 MOD : '%' ;
+
+NOT : '!' ;
+SUB : '-' ;
 
 AND : '&&';
 OR : '||';
-NOT : '!' ;
+
 
 EQUALS : '==';
 NOT_EQUALS : '!=';
@@ -101,11 +103,11 @@ LESS_THAN_OR_EQUAL : '<=';
 GREATER_THAN : '>';
 GREATER_THAN_OR_EQUAL : '>=';
 
-
-ID : [a-zA-Z]+ ; 
-FLOAT : '-'? [0-9]+'.'[0-9]+ ;
-INT : '0' | '-'? [1-9][0-9]* ;
+FLOAT : [0-9]+'.'[0-9]+ ;
+INT : '0' | [1-9][0-9]* ;
 BOOL : 'true' | 'false' ;
-STRING: '"' (~["])* '"' ;
+STRING: '"' (~["\\])* '"' ;
+ID : [a-zA-Z_][a-zA-Z0-9_]* ; 
+
 COMMENT : '//' ~[\r\n]* -> skip ;
 WS : [ \t\r\n]+ -> skip ; // toss out whitespace

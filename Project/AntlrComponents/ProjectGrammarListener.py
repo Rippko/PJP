@@ -98,6 +98,15 @@ class ProjectGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ProjectGrammarParser#unary.
+    def enterUnary(self, ctx:ProjectGrammarParser.UnaryContext):
+        pass
+
+    # Exit a parse tree produced by ProjectGrammarParser#unary.
+    def exitUnary(self, ctx:ProjectGrammarParser.UnaryContext):
+        pass
+
+
     # Enter a parse tree produced by ProjectGrammarParser#concat.
     def enterConcat(self, ctx:ProjectGrammarParser.ConcatContext):
         pass
@@ -140,15 +149,6 @@ class ProjectGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by ProjectGrammarParser#logical.
     def exitLogical(self, ctx:ProjectGrammarParser.LogicalContext):
-        pass
-
-
-    # Enter a parse tree produced by ProjectGrammarParser#not.
-    def enterNot(self, ctx:ProjectGrammarParser.NotContext):
-        pass
-
-    # Exit a parse tree produced by ProjectGrammarParser#not.
-    def exitNot(self, ctx:ProjectGrammarParser.NotContext):
         pass
 
 
