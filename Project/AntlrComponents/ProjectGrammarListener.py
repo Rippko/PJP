@@ -206,6 +206,15 @@ class ProjectGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ProjectGrammarParser#doWhileStatement.
+    def enterDoWhileStatement(self, ctx:ProjectGrammarParser.DoWhileStatementContext):
+        pass
+
+    # Exit a parse tree produced by ProjectGrammarParser#doWhileStatement.
+    def exitDoWhileStatement(self, ctx:ProjectGrammarParser.DoWhileStatementContext):
+        pass
+
+
     # Enter a parse tree produced by ProjectGrammarParser#blockStatement.
     def enterBlockStatement(self, ctx:ProjectGrammarParser.BlockStatementContext):
         pass

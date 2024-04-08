@@ -1,0 +1,2 @@
+int x;
+do write x; while(x < 10);

@@ -14,7 +14,7 @@ class EvalListener(GrammarListener):
             for var_name in var_names:
                 if var_name in self.blocks[i]:
                     self.has_error = True
-                    print(f'\033[1;31mVariable {var_name} already declared\033[0m')
+                    print(f'\033[1;31mVariable [{var_name}] already declared\033[0m')
                     return
         
         default_value = None
@@ -30,7 +30,7 @@ class EvalListener(GrammarListener):
                 default_value = False
             case _:
                 self.has_error = True
-                print(f'Unknown type {var_type}')
+                print(f'Unknown type [{var_type}]')
                 
         for var_name in var_names:
             self.blocks[-1][var_name] = (var_type, default_value)
@@ -54,14 +54,14 @@ class EvalListener(GrammarListener):
                 
                 if var_type != expr_type:
                     self.has_error = True
-                    print(f'\033[1;31mCannot assign {expr_type} to {var_type}\033[0m')
+                    print(f'\033[1;31mCannot assign [{expr_type}] to [{var_type}]\033[0m')
                     return
                     
                 self.blocks[i][var_name] = (var_type, value)
                 return
             
         self.has_error = True
-        print(f'\033[1;31mVariable {var_name} not declared\033[0m')
+        print(f'\033[1;31mVariable [{var_name}] not declared\033[0m')
 
     def getLeftAndRight(self, ctx):
         left = self.get_expr_type(ctx.expr(0))
@@ -84,7 +84,7 @@ class EvalListener(GrammarListener):
                     if var_name in block:
                         return block[var_name][0]
                 self.has_error = True
-                print(f'\033[1;31mVariable {var_name} not declared\033[0m')
+                print(f'\033[1;31mVariable [{var_name}] not declared\033[0m')
                 return None
             case GrammarParser.AddSubContext:
                 left, right = self.getLeftAndRight(ctx)
@@ -92,7 +92,7 @@ class EvalListener(GrammarListener):
                 if left == 'int' and right == 'int' or left == 'float' and right == 'float':
                     return left
                 self.has_error = True
-                print(f'\033[1;31mCannot add/sub {left} and {right}\033[0m')
+                print(f'\033[1;31mCannot add/sub [{left}] and [{right}]\033[0m')
                 return None
             case GrammarParser.MulDivContext:
                 left, right = self.getLeftAndRight(ctx)
@@ -107,7 +107,7 @@ class EvalListener(GrammarListener):
                     case 'float', 'float':
                         return 'float'
                 self.has_error = True
-                print(f'\033[1;31mCannot mul/div {left} and {right}\033[0m')
+                print(f'\033[1;31mCannot mul/div [{left}] and [{right}]\033[0m')
                 return None
             case GrammarParser.ParensContext:
                 return self.get_expr_type(ctx.expr())
@@ -117,7 +117,7 @@ class EvalListener(GrammarListener):
                 if left in ['int', 'float'] and right in ['int', 'float']:
                     return 'bool'
                 self.has_error = True
-                print(f'\033[1;31mCannot compare {left} and {right}\033[0m')
+                print(f'\033[1;31mCannot compare [{left}] and [{right}]\033[0m')
                 return None
             case GrammarParser.ModContext:
                 left, right = self.getLeftAndRight(ctx)
@@ -125,14 +125,14 @@ class EvalListener(GrammarListener):
                 if left == 'int' and right == 'int':
                     return 'int'
                 self.has_error = True
-                print(f'\033[1;31mCannot mod {left} and {right}\033[0m')
+                print(f'\033[1;31mCannot mod [{left}] and [{right}]\033[0m')
                 return None
             case GrammarParser.ComparisonContext:
                 left, right = self.getLeftAndRight(ctx)
 
                 if left == 'bool' or right == 'bool':
                     self.has_error = True
-                    print(f'\033[1;31mCannot compare {left} and {right}\033[0m')
+                    print(f'\033[1;31mCannot compare [{left}] and [{right}]\033[0m')
                     return None
                 return 'bool'
             case GrammarParser.LogicalContext:
@@ -141,7 +141,7 @@ class EvalListener(GrammarListener):
                 if left == 'bool' and right == 'bool':
                     return 'bool'
                 self.has_error = True
-                print(f'\033[1;31mCannot compare {left} and {right}\033[0m')
+                print(f'\033[1;31mCannot compare [{left}] and [{right}]\033[0m')
                 return None
             case GrammarParser.AssignmentContext:
                 return self.get_expr_type(ctx.expr())
@@ -153,12 +153,18 @@ class EvalListener(GrammarListener):
                 if left == 'string' and right == 'string':
                     return 'string'
                 self.has_error = True
-                print(f'\033[1;31mCannot concat {left} and {right}\033[0m')
+                print(f'\033[1;31mCannot concat [{left}] and [{right}]\033[0m')
                 return None                
             case _:
                 self.has_error = True
-                print(f'\033[1;31mUnknown expression type {type(ctx)}\033[0m')
+                print(f'\033[1;31mUnknown expression type [{type(ctx)}]\033[0m')
                 return None
+            
+    def exitDoWhileStatement(self, ctx: GrammarParser.DoWhileStatementContext):
+        statement = ctx.expr().getText()
+        if self.get_expr_type(ctx.expr()) != 'bool':
+            self.has_error = True
+            print(f'\033[1;31mDo-While statement expects bool, got [{statement}]\033[0m')
             
     def exitWriteExpr(self, ctx: GrammarParser.WriteExprContext):
         for expr in ctx.expr():
@@ -168,13 +174,13 @@ class EvalListener(GrammarListener):
         statement = ctx.expr().getText()
         if self.get_expr_type(ctx.expr()) != 'bool':
             self.has_error = True
-            print(f'\033[1;31mWhile statement expects bool, got {statement}\033[0m')
+            print(f'\033[1;31mWhile statement expects bool, got [{statement}]\033[0m')
             
     def exitIfStatement(self, ctx: GrammarParser.IfStatementContext):
         statement = ctx.expr().getText()
         if self.get_expr_type(ctx.expr()) != 'bool':
             self.has_error = True
-            print(f'\033[1;31mIf statement expects bool, got {statement}\033[0m')
+            print(f'\033[1;31mIf statement expects bool, got [{statement}]\033[0m')
             
     # def enterEveryRule(self, ctx):
     #     name = str(type(ctx).__name__).replace("Context", "").lower()

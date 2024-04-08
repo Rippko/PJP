@@ -10,6 +10,7 @@ statement
     | expr SEMI
     | ifStatement
     | whileStatement
+    | doWhileStatement
     | blockStatement
     | SEMI
     ;
@@ -47,6 +48,10 @@ ifStatement
 
 whileStatement
     : 'while' '(' expr ')' statement
+    ;
+
+doWhileStatement
+    : 'do' statement 'while' '(' expr ')' SEMI
     ;
 
 blockStatement
