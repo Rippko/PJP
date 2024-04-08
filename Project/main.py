@@ -22,6 +22,7 @@ def main(argv):
     
     if parser.getNumberOfSyntaxErrors() != 0:
         exit(0)
+    print("\033[32mSyntax checking completed succesfully\n\033[0m")
         
     walker = ParseTreeWalker()
     listener = EvalListener()
@@ -30,7 +31,7 @@ def main(argv):
     if listener.has_error:
         exit(0)
         
-    print('No errors found')
+    print("\033[32mType checking completed succesfully\n\033[0m")
     
 if __name__ == '__main__':
     main(sys.argv)

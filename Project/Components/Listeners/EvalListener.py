@@ -62,7 +62,12 @@ class EvalListener(GrammarListener):
             
         self.has_error = True
         print(f'\033[1;31mVariable {var_name} not declared\033[0m')
-        
+
+    def getLeftAndRight(self, ctx):
+        left = self.get_expr_type(ctx.expr(0))
+        right = self.get_expr_type(ctx.expr(1))
+        return left, right    
+
     def get_expr_type(self, ctx):
         match type(ctx):
             case GrammarParser.IntContext:
@@ -82,16 +87,16 @@ class EvalListener(GrammarListener):
                 print(f'\033[1;31mVariable {var_name} not declared\033[0m')
                 return None
             case GrammarParser.AddSubContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 if left == 'int' and right == 'int' or left == 'float' and right == 'float':
                     return left
                 self.has_error = True
                 print(f'\033[1;31mCannot add/sub {left} and {right}\033[0m')
                 return None
             case GrammarParser.MulDivContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 match left, right:
                     case 'int', 'int':
                         return 'int'
@@ -107,32 +112,32 @@ class EvalListener(GrammarListener):
             case GrammarParser.ParensContext:
                 return self.get_expr_type(ctx.expr())
             case GrammarParser.RelationalContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 if left in ['int', 'float'] and right in ['int', 'float']:
                     return 'bool'
                 self.has_error = True
                 print(f'\033[1;31mCannot compare {left} and {right}\033[0m')
                 return None
             case GrammarParser.ModContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 if left == 'int' and right == 'int':
                     return 'int'
                 self.has_error = True
                 print(f'\033[1;31mCannot mod {left} and {right}\033[0m')
                 return None
             case GrammarParser.ComparisonContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 if left == 'bool' or right == 'bool':
                     self.has_error = True
                     print(f'\033[1;31mCannot compare {left} and {right}\033[0m')
                     return None
                 return 'bool'
             case GrammarParser.LogicalContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 if left == 'bool' and right == 'bool':
                     return 'bool'
                 self.has_error = True
@@ -143,13 +148,13 @@ class EvalListener(GrammarListener):
             case GrammarParser.UnaryContext:
                 return self.get_expr_type(ctx.expr())
             case GrammarParser.ConcatContext:
-                left = self.get_expr_type(ctx.expr(0))
-                right = self.get_expr_type(ctx.expr(1))
+                left, right = self.getLeftAndRight(ctx)
+
                 if left == 'string' and right == 'string':
                     return 'string'
                 self.has_error = True
                 print(f'\033[1;31mCannot concat {left} and {right}\033[0m')
-                return None
+                return None                
             case _:
                 self.has_error = True
                 print(f'\033[1;31mUnknown expression type {type(ctx)}\033[0m')
