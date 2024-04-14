@@ -135,7 +135,15 @@ class TypeCheckListener(GrammarListener):
                     print(f'\033[1;31mCannot compare [{left}] and [{right}]\033[0m')
                     return None
                 return 'bool'
-            case GrammarParser.LogicalContext:
+            case GrammarParser.AndContext:
+                left, right = self.getLeftAndRight(ctx)
+
+                if left == 'bool' and right == 'bool':
+                    return 'bool'
+                self.has_error = True
+                print(f'\033[1;31mCannot compare [{left}] and [{right}]\033[0m')
+                return None
+            case GrammarParser.OrContext:
                 left, right = self.getLeftAndRight(ctx)
 
                 if left == 'bool' and right == 'bool':

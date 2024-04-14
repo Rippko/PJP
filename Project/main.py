@@ -4,8 +4,9 @@ from AntlrComponents.ProjectGrammarLexer import ProjectGrammarLexer as GrammarLe
 from AntlrComponents.ProjectGrammarParser import ProjectGrammarParser as GrammarParser
 from AntlrComponents.ProjectGrammarListener import ProjectGrammarListener as GrammarListener
 
-from Components.Listeners.EvalListener import TypeCheckListener
+from Components.Listeners.TypeCheckListener import TypeCheckListener
 from Components.Listeners.ErrorListener import CustomErrorListener
+from Components.Listeners.InstructionListener import InstructionListener
 
 def main(argv):
     if len(argv) < 2:
@@ -32,6 +33,11 @@ def main(argv):
         exit(0)
         
     print("\033[32mType checking completed succesfully\n\033[0m")
+    
+    instruction_walker = ParseTreeWalker()
+    instruction_listener = InstructionListener('.\Outputs\instructions3.txt')
+    
+    instruction_walker.walk(instruction_listener, prog)
     
 if __name__ == '__main__':
     main(sys.argv)

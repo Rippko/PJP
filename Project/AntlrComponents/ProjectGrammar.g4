@@ -18,10 +18,11 @@ statement
 expr: expr op=(MUL|DIV) expr                # mulDiv
     | expr op=(ADD|SUB) expr                # addSub
     | expr op=MOD expr                      # mod
-    | expr relationalOp expr                # relational
-    | expr comparisonOp expr                # comparison
+    | expr op=AND expr                      # and
+    | expr op=OR expr                       # or
+    | expr op=relationalOp expr             # relational
+    | expr op=comparisonOp expr             # comparison
     | op=(SUB|NOT) expr                     # unary
-    | expr logicalOp expr                   # logical
     | expr '.' expr                         # concat
     | INT                                   # int
     | FLOAT                                 # float
@@ -39,19 +40,27 @@ declar:
 writeExpr: 'write' expr (',' expr)*
     ;
 
-readExpr: 'read' ID (',' ID)*
+readExpr: 'read' expr (',' expr)*
     ;
 
 ifStatement
-    : 'if' '(' expr ')' statement ( 'else' statement )?
+    : 'if' '(' expr rpar statement (elseStatement)?
+    ;
+
+elseStatement
+    : 'else' statement
     ;
 
 whileStatement
-    : 'while' '(' expr ')' statement
+    : 'while' '(' expr rpar statement
     ;
 
 doWhileStatement
-    : 'do' statement 'while' '(' expr ')' SEMI
+    : 'do' statement 'while' '(' expr rpar SEMI
+    ;
+
+rpar 
+    : ')'
     ;
 
 blockStatement
@@ -77,11 +86,6 @@ comparisonOp
     | NOT_EQUALS
     ;
 
-logicalOp
-    : AND
-    | OR
-    ;
-
 INT_TYPE : 'int';
 FLOAT_TYPE : 'float';
 BOOL_TYPE : 'bool';
@@ -99,6 +103,7 @@ SUB : '-' ;
 
 AND : '&&';
 OR : '||';
+
 
 
 EQUALS : '==';
