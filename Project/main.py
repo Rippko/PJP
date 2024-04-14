@@ -4,7 +4,7 @@ from AntlrComponents.ProjectGrammarLexer import ProjectGrammarLexer as GrammarLe
 from AntlrComponents.ProjectGrammarParser import ProjectGrammarParser as GrammarParser
 from AntlrComponents.ProjectGrammarListener import ProjectGrammarListener as GrammarListener
 
-from Components.Listeners.EvalListener import EvalListener
+from Components.Listeners.EvalListener import TypeCheckListener
 from Components.Listeners.ErrorListener import CustomErrorListener
 
 def main(argv):
@@ -25,7 +25,7 @@ def main(argv):
     print("\033[32mSyntax checking completed succesfully\n\033[0m")
         
     walker = ParseTreeWalker()
-    listener = EvalListener()
+    listener = TypeCheckListener()
     walker.walk(listener, prog)
     
     if listener.has_error:

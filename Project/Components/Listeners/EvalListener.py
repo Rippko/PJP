@@ -1,7 +1,7 @@
 from AntlrComponents.ProjectGrammarParser import ProjectGrammarParser as GrammarParser
 from AntlrComponents.ProjectGrammarListener import ProjectGrammarListener as GrammarListener
 
-class EvalListener(GrammarListener):
+class TypeCheckListener(GrammarListener):
     def __init__(self):
         self.blocks = [{}]
         self.has_error = False
