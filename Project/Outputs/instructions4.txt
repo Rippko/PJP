@@ -1,0 +1,19 @@
+push I 1
+push I 2
+add I
+itof
+push F 3.3
+mul F
+pop
+push I 2
+push I 2
+add I
+pop
+push I 1
+itof
+push I 2
+itof
+push F 3.3
+mul F
+add F
+pop

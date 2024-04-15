@@ -7,7 +7,7 @@ statement
     : declar SEMI
     | writeExpr SEMI
     | readExpr SEMI
-    | expr SEMI
+    | expression
     | ifStatement
     | whileStatement
     | doWhileStatement
@@ -41,6 +41,10 @@ writeExpr: 'write' expr (',' expr)*
     ;
 
 readExpr: 'read' expr (',' expr)*
+    ;
+
+expression
+    : expr SEMI
     ;
 
 ifStatement

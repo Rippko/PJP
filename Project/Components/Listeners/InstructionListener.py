@@ -6,6 +6,7 @@ class InstructionListener(GrammarListener):
         self.filename = filename
         self.blocks = [{}]
         self.need_convert_to_float = False
+        self.ignore_float_conversion = False
         self.label_count = 0
         self.init_file()
     
@@ -25,7 +26,7 @@ class InstructionListener(GrammarListener):
             
     def exitInt(self, ctx: GrammarParser.IntContext):
         self.write_to_file(f'push I {ctx.INT().getText()}')
-        if self.need_convert_to_float:
+        if self.need_convert_to_float and not self.ignore_float_conversion: 
             self.write_to_file('itof')
             self.need_convert_to_float = False
     
@@ -134,10 +135,17 @@ class InstructionListener(GrammarListener):
             self.need_convert_to_float = True
             
     def exitAddSub(self, ctx: GrammarParser.AddSubContext):
-        if ctx.op.text == '+':
-            self.write_to_file('add')
+        type = self.get_expr_type(ctx)
+        if type == 'int':
+            if ctx.op.text == '+':
+                self.write_to_file('add I')
+            else:
+                self.write_to_file('sub I')
         else:
-            self.write_to_file('sub')
+            if ctx.op.text == '+':
+                self.write_to_file('add F')
+            else:
+                self.write_to_file('sub F')
             
     def enterMulDiv(self, ctx: GrammarParser.MulDivContext):
         left, right = self.getLeftAndRight(ctx)
@@ -145,10 +153,19 @@ class InstructionListener(GrammarListener):
             self.need_convert_to_float = True
             
     def exitMulDiv(self, ctx: GrammarParser.MulDivContext):
-        if ctx.op.text == '*':
-            self.write_to_file('mul')
+        type = self.get_expr_type(ctx)
+
+        if type == 'int':
+            if ctx.op.text == '*':
+                self.write_to_file('mul I')
+            else:
+                self.write_to_file('div I')
         else:
-            self.write_to_file('div')
+            if ctx.op.text == '*':
+                self.write_to_file('mul F')
+            else:
+                self.write_to_file('div F')
+        
             
     def exitDeclar(self, ctx: GrammarParser.DeclarContext):
         for i in range(len(ctx.ID())):
@@ -187,8 +204,8 @@ class InstructionListener(GrammarListener):
 
         self.write_to_file(f'load {name}')
         
-        if ctx.parentCtx.getChild(0) == ctx:
-            self.write_to_file('pop')
+        # if ctx.parentCtx.getChild(0) == ctx:
+        #     self.write_to_file('pop')
             
     def exitAnd(self, ctx: GrammarParser.AndContext):
         self.write_to_file('and')
@@ -257,11 +274,24 @@ class InstructionListener(GrammarListener):
         self.write_to_file(f"label {self.label_count}")
         self.label_count += 1
         
-    def enterDoWhileStatement(self, ctx: GrammarParser.DoWhileStatementContext):
-        self.write_to_file(f"label {self.label_count}")
+    # def enterDoWhileStatement(self, ctx: GrammarParser.DoWhileStatementContext):
+    #     self.write_to_file(f"label {self.label_count}")
 
-    def exitDoWhileStatement(self, ctx: GrammarParser.DoWhileStatementContext):
-        self.write_to_file(f"label {self.label_count}")
-        self.label_count += 1
-        self.write_to_file(f"fjmp {self.label_count - 1}")
+    # def exitDoWhileStatement(self, ctx: GrammarParser.DoWhileStatementContext):
+    #     self.write_to_file(f"label {self.label_count}")
+    #     self.label_count += 1
+    #     self.write_to_file(f"fjmp {self.label_count - 1}")
+
+    def exitExpression(self, ctx: GrammarParser.ExpressionContext):
+        self.write_to_file('pop')
+
+    def enterParens(self, ctx: GrammarParser.ParensContext):
+        if self.get_expr_type(ctx.expr()) == 'int':
+            self.ignore_float_conversion = True
+
+    def exitParens(self, ctx: GrammarParser.ParensContext):
+        if self.ignore_float_conversion and self.need_convert_to_float:
+            self.write_to_file('itof')
+            self.need_convert_to_float = False
+            self.ignore_float_conversion = False
     
