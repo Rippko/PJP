@@ -197,6 +197,15 @@ class ProjectGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ProjectGrammarParser#expression.
+    def enterExpression(self, ctx:ProjectGrammarParser.ExpressionContext):
+        pass
+
+    # Exit a parse tree produced by ProjectGrammarParser#expression.
+    def exitExpression(self, ctx:ProjectGrammarParser.ExpressionContext):
+        pass
+
+
     # Enter a parse tree produced by ProjectGrammarParser#ifStatement.
     def enterIfStatement(self, ctx:ProjectGrammarParser.IfStatementContext):
         pass

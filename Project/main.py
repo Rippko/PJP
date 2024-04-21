@@ -36,7 +36,7 @@ def main(argv):
     print("\033[32mType checking completed succesfully\n\033[0m")
     
     instruction_walker = ParseTreeWalker()
-    instruction_listener = InstructionListener('.\Outputs\instructions.txt')
+    instruction_listener = InstructionListener('.\Outputs\instructions4.txt')
     
     instruction_walker.walk(instruction_listener, prog)
     

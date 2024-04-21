@@ -34,7 +34,7 @@ load a
 print 2
 load a
 push I 1
-add
+add I
 save a
 load a
 pop
@@ -58,9 +58,15 @@ load b
 print 4
 load a
 push I 1
-add
+add I
 save a
 load a
 pop
 jmp 6
 label 7
+push I 1
+push I 2
+add I
+itof
+push F 3.3
+mul F
