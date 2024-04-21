@@ -1,0 +1,12 @@
+push I 2
+push I 3
+add
+push I 4
+push I 5
+sub
+push I 2
+push I 2
+mul
+push I 2
+push I 4
+div

@@ -7,6 +7,7 @@ from AntlrComponents.ProjectGrammarListener import ProjectGrammarListener as Gra
 from Components.Listeners.TypeCheckListener import TypeCheckListener
 from Components.Listeners.ErrorListener import CustomErrorListener
 from Components.Listeners.InstructionListener import InstructionListener
+from Components.Interpreter import Interpreter
 
 def main(argv):
     if len(argv) < 2:
@@ -39,5 +40,8 @@ def main(argv):
     
     instruction_walker.walk(instruction_listener, prog)
     
+    instruction_interpreter = Interpreter('.\Outputs\instructions.txt')
+    instruction_interpreter.interpret()
+
 if __name__ == '__main__':
     main(sys.argv)
